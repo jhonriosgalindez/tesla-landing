@@ -1,0 +1,98 @@
+<header id="landing-header" class="flex items-center justify-between fixed top-0 px-6 py-6 w-full h-20 lg:px-14 z-50 text-white">
+  <a href="/" class="w-3/12">
+    <svg class="h-6 w-32 tds-icon tds-icon-logo-wordmark tds-site-logo-icon" viewBox="0 0 342 35" xmlns="http://www.w3.org/2000/svg"><path d="M0 .1a9.7 9.7 0 0 0 7 7h11l.5.1v27.6h6.8V7.3L26 7h11a9.8 9.8 0 0 0 7-7H0zm238.6 0h-6.8v34.8H263a9.7 9.7 0 0 0 6-6.8h-30.3V0zm-52.3 6.8c3.6-1 6.6-3.8 7.4-6.9l-38.1.1v20.6h31.1v7.2h-24.4a13.6 13.6 0 0 0-8.7 7h39.9v-21h-31.2v-7h24zm116.2 28h6.7v-14h24.6v14h6.7v-21h-38zM85.3 7h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zm0 13.8h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zm0 14.1h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zM308.5 7h26a9.6 9.6 0 0 0 7-7h-40a9.6 9.6 0 0 0 7 7z" fill="currentColor"></path></svg>
+  </a>
+
+  <div class="dropdown h-auto lg:hidden">
+    <span>Menu</span>
+    <div class="active hidden">
+      <div class="absolute top-16 left-0 flex flex-col px-7 h-screen w-full text-xl text-left">
+        <ul class="">
+          <li class="flex items-center justify-between py-8"><a href="#model-s" class="">Model S</a><span>></span></li>
+          <li class="flex items-center justify-between py-5"><a href="#model-3" class="">Model 3</a><span>></span></li>
+          <li class="flex items-center justify-between py-5"><a href="#model-x" class="">Model X</a><span>></span></li>
+          <li class="flex items-center justify-between py-5"><a href="#model-y" class="">Model Y</a><span>></span></li>
+        </ul>
+  
+        <ul>
+          <li class="py-5"><a href="#">Shop</a></li>
+          <li class="py-5"><a href="#">Support</a></li>
+          <li class="flex items-center justify-between py-5"><a href="#" class="">Language</a><span>></span></li>
+          <li class="py-5"><a href="#">Account</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-6/12 flex justify-center max-[1023px]:hidden">
+    <ul class="flex [&>li>a]:px-4 [&>li>a]:py-2 [&>li]:rounded [&>li>a]:block [&>li>a]:text-current">
+      <li><a href="#model-s">Model S</a></li>
+      <li><a href="#model-3">Model 3</a></li>
+      <li><a href="#model-x">Model X</a></li>
+      <li><a href="#model-y">Model Y</a></li>
+      <li><a href="#">Shop</a></li>
+    </ul>
+  </div>
+
+  <div class="w-3/12 flex justify-end max-[1023px]:hidden">
+    <ul class="flex [&>li>a]:px-4 [&>li>a]:py-2 [&>li]:rounded [&>li>a]:block [&>li>a]:text-current">
+      <li><a href="#">Support</a></li>
+      <li><a href="#">Language</a></li>
+      <li><a href="#">Account</a></li>	
+    </ul>
+  </div>
+
+  <div id="menu-backdrop" class="absolute bg-black/5 backdrop-blur-lg rounded left-[var(--left)] top-[var(--top)] w-[var(--width)] h-[var(--heigth)] transition-all duration-300 ease-in-out opacity-0 -z-10">
+  </div>
+
+</header>
+
+<script>
+
+  const header = document.querySelector('#landing-header') as HTMLElement
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.90
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const { isIntersecting } = entry
+      if (isIntersecting) {
+        const color = entry.target.getAttribute('data-header-color')
+        header.style.color = color
+      }
+    })
+  }, observerOptions)
+
+  const sections = document.querySelectorAll('.landing-section')
+  sections.forEach(section => observer.observe(section))
+
+</script>
+
+<script>
+
+  const listItem = document.querySelectorAll('#landing-header li')
+  const menuBackDrop = document.querySelector('#menu-backdrop') as HTMLElement
+
+  listItem.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      const { left, top, width, height } = item.getBoundingClientRect()
+
+      menuBackDrop.style.setProperty('--left', `${left}px`)
+      menuBackDrop.style.setProperty('--top', `${top}px`)
+      menuBackDrop.style.setProperty('--width', `${width}px`)
+      menuBackDrop.style.setProperty('--heigth', `${height}px`)
+      menuBackDrop.style.opacity = '1'
+      menuBackDrop.style.visibility = 'visible'
+    })
+
+    item.addEventListener('mouseleave', () => {
+      menuBackDrop.style.opacity = '0'
+      menuBackDrop.style.visibility = 'hidden'
+    })
+  })
+
+</script>

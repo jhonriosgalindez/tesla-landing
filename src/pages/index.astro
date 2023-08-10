@@ -1,67 +1,36 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Section from '../components/Section.astro';
+import Home from '../components/Home.astro';
 ---
 
 <Layout title="Welcome to Tesla | Driving to the Future">
-	<main>
-		<header class="flex items-center justify-between fixed top-0 px-6 py-6 w-full h-20 lg:px-14 z-50 text-white">
-			<a href="#" class="w-3/12">
-				<svg class="h-6 w-32 tds-icon tds-icon-logo-wordmark tds-site-logo-icon" viewBox="0 0 342 35" xmlns="http://www.w3.org/2000/svg"><path d="M0 .1a9.7 9.7 0 0 0 7 7h11l.5.1v27.6h6.8V7.3L26 7h11a9.8 9.8 0 0 0 7-7H0zm238.6 0h-6.8v34.8H263a9.7 9.7 0 0 0 6-6.8h-30.3V0zm-52.3 6.8c3.6-1 6.6-3.8 7.4-6.9l-38.1.1v20.6h31.1v7.2h-24.4a13.6 13.6 0 0 0-8.7 7h39.9v-21h-31.2v-7h24zm116.2 28h6.7v-14h24.6v14h6.7v-21h-38zM85.3 7h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zm0 13.8h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zm0 14.1h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zM308.5 7h26a9.6 9.6 0 0 0 7-7h-40a9.6 9.6 0 0 0 7 7z" fill="currentColor"></path></svg>
-			</a>
-	
-			<div class="dropdown h-auto lg:hidden">
-				<a href="#">Menu</a>
-				<div class="active hidden">
-					<div class="absolute top-16 left-0 flex flex-col px-7 h-screen w-full text-xl text-left">
-						<ul class="">
-							<li class="flex items-center justify-between py-8"><a href="#" class="">Vehicles</a><span>></span></li>
-							<li class="flex items-center justify-between py-5"><a href="#" class="">Energy</a><span>></span></li>
-							<li class="flex items-center justify-between py-5"><a href="#" class="">Charging</a><span>></span></li>
-							<li class="flex items-center justify-between py-5"><a href="#" class="">Discover</a><span>></span></li>
-						</ul>
-			
-						<ul>
-							<li class="py-5"><a href="#">Shop</a></li>
-							<li class="py-5"><a href="#">Support</a></li>
-							<li class="flex items-center justify-between py-5"><a href="#" class="">Language</a><span>></span></li>
-							<li class="py-5"><a href="#">Account</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-	
-			<div class="w-6/12 flex justify-center max-[1023px]:hidden">
-				<ul class="flex [&>li>a]:px-4 [&>li>a]:py-2 [&>li]:rounded [&>li>a]:block">
-					<li class="hover:bg-slate-300 hover:transition delay-150"><a href="#">Vehicles</a></li>
-					<li class="hover:bg-slate-300 hover:transition delay-150"><a href="#">Energy</a></li>
-					<li class="hover:bg-slate-300 hover:transition delay-150"><a href="#">Charging</a></li>
-					<li class="hover:bg-slate-300 hover:transition delay-150"><a href="#">Discover</a></li>
-					<li class="hover:bg-slate-300 hover:transition delay-150"><a href="#">Shop</a></li>
-				</ul>
-			</div>
-	
-			<div class="w-3/12 flex justify-end max-[1023px]:hidden">
-				<ul class="flex [&>li>a]:px-4 [&>li>a]:py-2 [&>li]:rounded [&>li>a]:block">
-					<li class="hover:bg-slate-300 hover:transition delay-150"><a href="#">Support</a></li>
-					<li class="hover:bg-slate-300 hover:transition delay-150"><a href="#">Language</a></li>
-					<li class="hover:bg-slate-300 hover:transition delay-150"><a href="#">Account</a></li>	
-				</ul>
-			</div>
-	
-	
-		</header>
-
-		<section class="relative w-screen h-screen text-white overflow-hidden">
-			<div class="flex flex-col items-center mt-20 w-screen h-screen text-center lg:mt-32">
-				<h2 class="px-12 pb-2 text-4xl font-semibold">Experience Tesla</h2>
-				<p class="text-base">Schedule a Demo Drive Today</p>
-				<a class="absolute bottom-0 flex justify-center mb-8 px-20 py-1.5 max-w-fit text-base font-semibold border-solid border-2 border-white backdrop-blur-sm transition-colors hover:bg-white hover:text-black lg:mb-24" href="#">Demo Drive</a>
-			</div>
-
-			<div class="absolute top-0 bottom-0 h-full -z-10">
-				<video autoplay muted loop src="../../public/video/video.webm" class="object-center object-cover w-screen h-full"></video>
-			</div>
-		</section>
+	<Header />
+	<main class="snap-y snap-mandatory relative w-full h-screen overflow-auto scroll-smooth">
+		<div class="snap-center">
+			<Home />
+		</div>
+		<div id="model-s" class="snap-center">
+			<Section title="Model S" subtitle="Ask your test drive now" color="black">
+				<img src="../../public/images/model-s.avif" alt="model-s image" slot="background" class="w-screen h-full object-center object-cover"/>
+			</Section>
+		</div>
+		<div id="model-3" class="snap-center">
+			<Section title="Model 3" subtitle="Starting at $32,740" color="black">
+				<img src="../../public/images/model-3.avif" alt="model-3 image" slot="background" class="w-screen h-full object-center object-cover"/>
+			</Section>
+		</div>
+		<div id="model-x" class="snap-center">
+			<Section title="Model X" subtitle="Ask your test drive now" color="black">
+				<img src="../../public/images/model-x.avif" alt="model-x image" slot="background" class="w-screen h-full object-center object-cover"/>
+			</Section>
+		</div>
+		<div id="model-y" class="snap-center">
+			<Section title="Model Y" subtitle="Starting at $40,240" color="black">
+				<img src="../../public/images/model-y.avif" alt="model-y image" slot="background" class="w-screen h-full object-center object-cover"/>
+			</Section>
+		</div>
 
 	</main>
 
