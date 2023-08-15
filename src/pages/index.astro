@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Section from '../components/Section.astro';
 import Home from '../components/Home.astro';
 
+import video from '../../public/static/video/video.webm';
 import modelS from '../../public/static/images/model-s.avif';
 import model3 from '../../public/static/images/model-3.avif';
 import modelX from '../../public/static/images/model-x.avif';
@@ -14,11 +15,13 @@ import powerwall from '../../public/static/images/Powerwall.avif';
 import accesories from '../../public/static/images/Accessories.avif';
 ---
 
-<Layout title="Welcome to Tesla | Driving to the Future Now">
+<Layout title="Welcome to Tesla | Driving to the Future">
 	<Header />
 	<main class="snap-y snap-mandatory relative w-full h-screen overflow-auto scroll-smooth">
 		<div class="snap-center">
-			<Home />
+			<Home>
+				<video autoplay muted loop src={video} slot="video" class="object-center object-cover w-screen h-full"></video>
+			</Home>
 		</div>
 		<div id="model-s" class="snap-center">
 			<Section title="Model S" subtitle="" color="black" textLink="Explore Inventory" textButton1="Custom Order" textButton2="Demo Drive">

@@ -1,3 +1,4 @@
+
 <section id="home" class="landing-section relative w-full h-screen text-white overflow-hidden" data-header-color="white">
   <div class="flex flex-col items-center mt-20 w-screen h-screen text-center lg:mt-32">
     <h2 class="px-12 pb-2 text-4xl font-semibold">Experience Tesla</h2>
@@ -6,6 +7,6 @@
   </div>
 
   <div class="absolute top-0 bottom-0 h-full -z-10">
-    <video autoplay muted loop src="/public/static/video/video.webm" class="object-center object-cover w-screen h-full"></video>
+    <slot name="video"/>
   </div>
 </section>
