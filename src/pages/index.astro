@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Section from '../components/Section.astro';
 import Home from '../components/Home.astro';
+
+import modelS from '../../public/static/images/model-s.avif';
 ---
 
 <Layout title="Welcome to Tesla | Driving to the Future">
@@ -13,7 +15,7 @@ import Home from '../components/Home.astro';
 		</div>
 		<div id="model-s" class="snap-center">
 			<Section title="Model S" subtitle="" color="black" textLink="Explore Inventory" textButton1="Custom Order" textButton2="Demo Drive">
-				<img src="/public/static/images/model-s.avif" alt="model-s image" slot="background" class="w-screen h-full object-center object-cover"/>
+				<img src={modelS} alt="model-s image" slot="background" class="w-screen h-full object-center object-cover"/>
 			</Section>
 		</div>
 		<div id="model-3" class="snap-center">
