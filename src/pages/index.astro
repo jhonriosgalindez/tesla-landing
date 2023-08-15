@@ -5,6 +5,13 @@ import Section from '../components/Section.astro';
 import Home from '../components/Home.astro';
 
 import modelS from '../../public/static/images/model-s.avif';
+import model3 from '../../public/static/images/model-3.avif';
+import modelX from '../../public/static/images/model-x.avif';
+import modelY from '../../public/static/images/model-y.avif';
+import solarPaneles from '../../public/static/images/solarPanels.avif';
+import solarRoof from '../../public/static/images/Homepage-SolarRoof-Desktop-Global.avif';
+import powerwall from '../../public/static/images/Powerwall.avif';
+import accesories from '../../public/static/images/Accessories.avif';
 ---
 
 <Layout title="Welcome to Tesla | Driving to the Future">
@@ -20,37 +27,37 @@ import modelS from '../../public/static/images/model-s.avif';
 		</div>
 		<div id="model-3" class="snap-center">
 			<Section title="Model 3" subtitle="Starting at $32,740" textLink="" color="black" textButton1="Explore Inventory" textButton2="Custom Order">
-				<img src="/public/static/images/model-3.avif" alt="model-3 image" slot="background" class="w-screen h-full object-center object-cover"/>
+				<img src={model3} alt="model-3 image" slot="background" class="w-screen h-full object-center object-cover"/>
 			</Section>
 		</div>
 		<div id="model-x" class="snap-center">
 			<Section title="Model X" subtitle="" color="black" textLink="Explore Inventory" textButton1="Custom Order" textButton2="Demo Drive">
-				<img src="/public/static/images/model-x.avif" alt="model-x image" slot="background" class="w-screen h-full object-center object-cover"/>
+				<img src={modelX} alt="model-x image" slot="background" class="w-screen h-full object-center object-cover"/>
 			</Section>
 		</div>
 		<div id="model-y" class="snap-center">
 			<Section title="Model Y" subtitle="Starting at $40,240" textLink="" color="black" textButton1="Explore Inventory" textButton2="Custom Order">
-				<img src="/public/static/images/model-y.avif" alt="model-y image" slot="background" class="w-screen h-full object-center object-cover"/>
+				<img src={modelY} alt="model-y image" slot="background" class="w-screen h-full object-center object-cover"/>
 			</Section>
 		</div>
 		<div id="solar-panels" class="snap-center">
 			<Section title="Solar Panels" subtitle="" textLink="Schedule a Virtual Consultation" color="black" textButton1="Order Now" textButton2="Learn More">
-				<img src="/public/static/images/solarPanels.avif" alt="solar panels image" slot="background" class="w-screen h-full object-center object-cover"/>
+				<img src={solarPaneles} alt="solar panels image" slot="background" class="w-screen h-full object-center object-cover"/>
 			</Section>
 		</div>
 		<div id="solar-roof" class="snap-center">
 			<Section title="Solar Roof" subtitle="Produce Clean Energy From Your Roof" textLink="" color="black" textButton1="Order Now" textButton2="learn More">
-				<img src="/public/static/images/Homepage-SolarRoof-Desktop-Global.avif" alt="solar roof image" slot="background" class="w-screen h-full object-center object-cover"/>
+				<img src={solarRoof} alt="solar roof image" slot="background" class="w-screen h-full object-center object-cover"/>
 			</Section>
 		</div>
 		<div id="powerwall" class="snap-center">
-			<Section title="Solar Roof" subtitle="" textLink="" color="black" textButton1="Order Now" textButton2="Learn More">
-				<img src="/public/static/images/Powerwall.avif" alt="powerwall image" slot="background" class="w-screen h-full object-center object-cover"/>
+			<Section title="Powerwall" subtitle="" textLink="" color="black" textButton1="Order Now" textButton2="Learn More">
+				<img src={powerwall} alt="powerwall image" slot="background" class="w-screen h-full object-center object-cover"/>
 			</Section>
 		</div>
 		<div id="accesories" class="snap-center">
 			<Section title="Accesories" subtitle="" textLink="" color="black" textButton1="Shop Now" textButton2="Learn More">
-				<img src="/public/static/images/Accessories.avif" alt="accesories image" slot="background" class="w-screen h-full object-center object-cover"/>
+				<img src={accesories} alt="accesories image" slot="background" class="w-screen h-full object-center object-cover"/>
 			</Section>
 		</div>
 
